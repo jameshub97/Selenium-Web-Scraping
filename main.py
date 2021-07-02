@@ -1,4 +1,5 @@
 import time
+import csv
 from xml.dom.minidom import Element
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -24,7 +25,10 @@ elements = driver.find_elements_by_tag_name("p")
 for x in elements:
     print(x.text)
 
-
+with open('venv\test.csv', 'w') as f:
+    writer = csv.writer(f)
+    writer.writerow(row)
+    
 # Searching
 search = driver.find_element_by_name("search")
 search.send_keys("snake")
