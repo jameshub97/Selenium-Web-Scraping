@@ -7,10 +7,13 @@ import pandas as pd
 # df = pd.DataFrame(columns = ['name', 'area', 'country_code2', 'country_code3']
 # ,data = ['Afghanistan', 652090, 'AF', 'AFG'])
 
-df = pd.DataFrame(
-                data=(4,4['name', 'area', 'country','code']),
-                columns =["a", "b", "c", "d"])
-print(df)
+data = {'Data': ['name', 'area', 'country','code'],'columns':["a", "b", "c", "d"]}
+
+
+df = pd.DataFrame(data)
+
+df.to_csv('eg.csv')
+
 
 # with open('eg.csv', encoding='UTF8') as f:
 #     writer = csv.writer(f)
