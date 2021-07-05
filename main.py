@@ -1,5 +1,6 @@
 import time
 import csv
+import pandas as pd
 from xml.dom.minidom import Element
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -7,14 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
-
-header = ['name', 'area', 'country_code2', 'country_code3']
-data = ['Afghanistan', 652090, 'AF', 'AFG']
-
-with open('venv\eg.csv', encoding='UTF8') as f:
-    writer = csv.writer(f)
-    writer.writerow(header)
-    writer.writerow(data)
 
 # Init of webdriver
 driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -31,7 +24,18 @@ print("Tags", tags.text)
 
 elements = driver.find_elements_by_tag_name("p")
 for x in elements:
-    print(x.text)
+    text_arr = [x.text]
+
+
+print(text_arr)
+
+data = {'Page': [driver.title],'Text':[x.text]}
+
+
+df = pd.DataFrame(data)
+print(df)
+df.to_csv('textdata.csv')
+
 
 
 

@@ -7,7 +7,7 @@ import pandas as pd
 # df = pd.DataFrame(columns = ['name', 'area', 'country_code2', 'country_code3']
 # ,data = ['Afghanistan', 652090, 'AF', 'AFG'])
 
-data = {'Data': ['name', 'area', 'country','code'],'columns':["a", "b", "c", "d"]}
+data = {'Tit': ['name', 'area', 'country','code'],'columns':["a", "b", "c", "d"]}
 
 
 df = pd.DataFrame(data)
