@@ -1,1 +1,1 @@
-Using selenium for automating and saving data from wikipedia pages related to snakes
+Using Selenium for automating web interactions
