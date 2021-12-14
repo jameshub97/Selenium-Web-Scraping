@@ -1,1 +1,1 @@
-Using Selenium for automating web interactions
+Selenium tests for automating web interactions
